@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppConfig>
+  <ServerInfo>
+    <Server ip="127.0.0.1" port="60002"></Server>
+  </ServerInfo>
+  <ComInfo>
+	<!--id=0是开主机使用，禁止占用-->
+	<com id="0" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.1.255" port="7" protocol="udp"></com>
+	<!--8个设备电箱开关 前4个是灯光 后4个是设备-->
+    <com id="1" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.207" port="1234" protocol="udp"></com>
+	<com id="2" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.208" port="1234" protocol="udp"></com>
+	<com id="3" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.209" port="1234" protocol="udp"></com>
+	<com id="4" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.210" port="1234" protocol="udp"></com>
+	<com id="5" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.211" port="1234" protocol="udp"></com>
+	<com id="6" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.212" port="1234" protocol="udp"></com>
+	<com id="7" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.213" port="1234" protocol="udp"></com>
+	<com id="8" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.214" port="1234" protocol="udp"></com>
+	<!--5台视频处理器-->
+	<com id="9" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.200" port="5002" protocol="udp"></com><!--楼梯条形屏-->
+	<com id="10" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.202" port="5002" protocol="udp"></com><!--迎宾区旋转屏-->
+	<com id="11" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.203" port="5002" protocol="udp"></com><!--能力区大屏-->
+	<com id="12" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.204" port="5002" protocol="udp"></com><!--智慧社区2*4拼接屏-->
+	<com id="13" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.206" port="5002" protocol="udp"></com><!--5G展望区2*2拼接屏-->
+	<!--4台矩阵设备-->
+	<com id="14" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.215" port="23" protocol="udp"></com><!--音频矩阵-->
+	<com id="15" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.216" port="23" protocol="udp"></com><!--三角展岛视频矩阵-->
+	<com id="16" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.217" port="23" protocol="udp"></com><!-- 云视讯视频矩阵-->
+	<com id="17" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="1" ip="192.168.0.218" port="23" protocol="udp"></com><!--过道展岛视频矩阵-->
+	<!--其他设备-->
+	<com id="18" BaudRate="9600" DataBits="8" StopBits="1" Parity="0" cmdstr="0" ip="192.168.0.201" port="23" protocol="udp"></com><!--旋转屏幕电机-->
+  </ComInfo>
+  <DeviceList>
+	<device type ="1" id="1" id2="" id3="1-1"><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>电箱1</devicename>
+		<com>1</com>
+		<cmd1>setr=1111111111</cmd1><!--设备开命令-->
+		<cmd2>setr=0000000000</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+	</device>
+	<device type ="1" id="2" id2="" id3="1-1"><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>电箱2</devicename>
+		<com>2</com>
+		<cmd1>setr=1111111111</cmd1><!--设备开命令-->
+		<cmd2>setr=0000000000</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+	</device>
+	<device type ="1" id="3" id2="" id3="1-1"><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>电箱3</devicename>
+		<com>3</com>
+		<cmd1>setr=1111111111</cmd1><!--设备开命令-->
+		<cmd2>setr=0000000000</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+	</device>
+	<device type ="1" id="4" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>旋转屏幕电机</devicename>
+		<com>18</com>
+		<cmd1>0230313437303144303130303030303039324403</cmd1><!--设备开命令-->
+		<cmd2>0230313437303144303130303030303041333503</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="1" id="5" id2="" id3="1-1"><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>主机</devicename>
+		<com>0</com>
+		<cmd1>50-3a-a0-31-92-20,50-3a-a0-31-92-21,</cmd1><!--设备开命令-->
+		<cmd2></cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+	</device>
+	<device type ="2" id="1" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>迎宾区条形屏信号处理器</devicename>
+		<com>9</com>
+		<cmd1>/setpreset:d,{1};</cmd1><!--设备开命令-->
+		<cmd2></cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="2" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>迎宾区旋转屏信号处理器</devicename>
+		<com>10</com>
+		<cmd1>/setpreset:d,{1};</cmd1><!--设备开命令-->
+		<cmd2></cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="3" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>能力区大屏信号处理器</devicename>
+		<com>11</com>
+		<cmd1>/setpreset:d,{1};</cmd1><!--设备开命令-->
+		<cmd2></cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="4" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>智慧社区2*4拼接屏信号处理器</devicename>
+		<com>12</com>
+		<cmd1>/setpreset:d,{1};</cmd1><!--设备开命令-->
+		<cmd2></cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="5" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>5G展望区大屏信号处理器</devicename>
+		<com>13</com>
+		<cmd1>/setpreset:d,{1};</cmd1><!--设备开命令-->
+		<cmd2></cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="6" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>万物互联三角展岛视频矩阵</devicename>
+		<com>15</com>
+		<cmd1>PV00SW{0}{1}NT</cmd1><!--设备开命令-->
+		<cmd2>2</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="7" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>基础能力展岛云视讯视频矩阵</devicename>
+		<com>16</com>
+		<cmd1>PV00SW{0}{1}NT</cmd1><!--设备开命令-->
+		<cmd2>2</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+	<device type ="2" id="8" id2="" id3=""><!--type:1开关类设备  2:矩阵类设备 3:三态类设备-->
+		<devicename>VIP过道无人机视频矩阵</devicename>
+		<com>17</com>
+		<cmd1>PV00SW{0}{1}NT</cmd1><!--设备开命令-->
+		<cmd2>2</cmd2><!--设备关命令-->
+		<cmd3></cmd3>
+		<cmd4></cmd4>
+    </device>
+
+  </DeviceList>
+</AppConfig>
