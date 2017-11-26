@@ -1,0 +1,2 @@
+# devcmd
+for devices command
