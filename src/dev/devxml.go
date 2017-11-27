@@ -232,15 +232,43 @@ func (p *DevicePeerInfo) ConnectToPeer(to *DeviceInfo) {
 		}
 	}
 }
+
 func (p *DevicePeerInfo) AppendCmd(cmd string) {
 	p.m.Lock()
 	p.CmdBuff += cmd
 	p.m.Unlock()
 }
+
 func (p *DevicePeerInfo) ClearCmd() {
 	p.m.Lock()
 	p.CmdBuff = ""
 	p.m.Unlock()
+}
+
+//arg-未使用
+func (d *DeviceInfo) GetCmdString(cmd1 string, cmd2 string, args ...string) string {
+	if d.Dtype == SWITCH {
+		cmd := d.Cmd1
+		if strings.ToLower(cmd1) == "close" {
+			cmd = d.Cmd2
+		}
+		return cmd
+	}
+	if d.Dtype == MATRIX {
+		cmd := d.Cmd1
+		in := cmd1
+		out := cmd2
+		if len(d.Cmd2) > 0 {
+			in = ("000" + in)
+			in = in[len(in)-2 : len(in)]
+			out = "000" + out
+			out = out[len(out)-2 : len(out)]
+		}
+		cmd = strings.Replace(cmd, "{0}", in, -1)
+		cmd = strings.Replace(cmd, "{1}", out, -1)
+		return cmd
+	}
+	return ""
 }
 
 //16进制字符串转[]byte

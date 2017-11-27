@@ -18,8 +18,14 @@ func main() {
 	go msg.ReciveMsg(runinfo.Cmdconn, runinfo.CmdQ)
 	go msg.ProcessMsg(runinfo.CmdQ, runinfo)
 	go msg.LogForPlay(runinfo.Logconn)
-	ver := "Welcom to Device Center. ver:0.10"
+	ver := "Welcom to Device Center. ver:0.16"
 	mylog.RecordLog(ver)
-	var a int
-	fmt.Scanf("%d", &a)
+	for {
+		var a string
+		fmt.Scanf("%s", &a)
+		if a == "exit" {
+			break
+		}
+	}
+
 }
