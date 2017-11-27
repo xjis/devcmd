@@ -18,7 +18,7 @@ func main() {
 	go msg.ReciveMsg(runinfo.Cmdconn, runinfo.CmdQ)
 	go msg.ProcessMsg(runinfo.CmdQ, runinfo)
 	go msg.LogForPlay(runinfo.Logconn)
-	ver := "Welcom to Device Center. ver:0.16"
+	ver := "Welcom to Device Center. ver:0.18"
 	mylog.RecordLog(ver)
 	for {
 		var a string

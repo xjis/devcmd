@@ -49,8 +49,9 @@ func ReciveMsg(conn *net.UDPConn, c chan string) {
 	for {
 		n, rAddr, err := conn.ReadFromUDP(buf[0:])
 		if err != nil {
-			mylog.RecordLog(err.Error())
-			return
+			log := fmt.Sprintf("Recv msg error: %v ", err.Error())
+			mylog.RecordLog(log)
+			continue
 		}
 		log := fmt.Sprintf("Recv msg from %v %v", rAddr.String(), string(buf[0:n]))
 		mylog.RecordLog(log)
@@ -64,7 +65,7 @@ func LogForPlay(conn *net.UDPConn) {
 		if err != nil {
 			log := fmt.Sprintf("Recv msg error: %v ", err.Error())
 			mylog.RecordPlayLog(log)
-			return
+			continue
 		}
 		log := fmt.Sprintf("Recv msg from %v %v", rAddr.String(), string(buf[0:n]))
 		mylog.RecordPlayLog(log)
